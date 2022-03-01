@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}{{ category.name }} on Creative Folk{% endblock %}
+{% block description %}{{ category.description|e('html_attr') }}{% endblock %}
+
+{% block content %}
+<main class="container" id="content">
+  <section class="header">
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.description }}</p>
+  </section>
+  <section class="grid">
+    {{ include('article-summaries.html') }}
+  </section>
+</main>
+{% endblock %}

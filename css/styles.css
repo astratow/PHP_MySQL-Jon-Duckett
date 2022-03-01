@@ -1,0 +1,74 @@
+/* CSS for Index Page */
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #352e2f;
+  margin: 0px auto;
+  padding: 30px;
+  background: #f7f7f7;
+  text-align: center;}
+
+h1 {
+   text-transform: uppercase;}
+
+h3 {
+    color: #707070;}
+
+a {
+  color: #a4609c;
+  text-decoration: none;}
+
+a:hover {
+  color: #c8583a;}
+
+a:visited {
+  color: #c8583a;}
+
+table {
+  padding: 0px;
+  margin-left:auto; 
+  margin-right:auto;}
+
+td, th {
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 3px;
+  text-align: left;}
+
+td.section {
+  background-color: #efefef;
+}
+
+code {
+  font-size: 124%;}
+
+.link {
+  font-family: monospace;
+  font-size: 124%;}
+
+.important {
+  background-color: #efefef;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 1em 2em;
+  margin: 2em;
+  max-width: 42em;
+  display: inline-block;}
+
+.blank {
+  background: #f7f7f7;}
+
+p.warning {
+  border: 2px solid #ab002c;
+  padding: 1em;
+  margin: 1em auto;
+  background-color: #fff;
+  width: max-content;
+}
+
+ul {
+  max-width: 20em;
+  margin: 0 auto 1em auto;
+  text-align: left;
+}

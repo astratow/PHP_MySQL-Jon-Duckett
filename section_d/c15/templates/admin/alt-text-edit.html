@@ -1,0 +1,22 @@
+{% extends 'admin/layout.html' %}
+{% block content %}
+  <main class="container admin" id="content">
+    <form action="alt-text-edit.php?id={{ article.id }}" method="POST"  class="narrow">
+      <h1>Update Alt Text</h1>
+
+      {% if errors.message %}<div class="alert alert-danger">{{ errors.message }}</div>{% endif %}
+
+      <div class="form-group">
+        <label for="image_alt">Alt text: </label>
+        <input type="text" name="image_alt" id="image_alt" value="{{ article.image_alt}}"  class="form-control">
+        <span class="errors">{{ errors.alt }}</span>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" name="delete" value="Update" class="btn btn-primary btn-save">
+      </div>
+      <img src="../uploads/{{ article.image_file }}" alt="{{ article.image_alt }}">
+
+    </form>
+  </main>
+{% endblock %}

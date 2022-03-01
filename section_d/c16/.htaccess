@@ -1,0 +1,12 @@
+php_value  default_charset     "utf-8"
+php_value  max_execution_time  30
+php_value  memory_limit        20M
+php_flag   file_uploads        on
+php_value  post_max_size       5M
+php_value  upload_max_filesize 5M
+php_value  error_reporting     -1
+php_flag   display_errors      on
+php_flag   log_errors          on
+
+ErrorDocument 404 /phpbook/section_d/c16/public/page-not-found.php
+ErrorDocument 500 /phpbook/section_c/c16/public/error.php

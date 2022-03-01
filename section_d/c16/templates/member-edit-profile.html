@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Update profile{% endblock %}
+{% block description %}Update profile for Creative Folk{% endblock %}
+
+{% block content %}
+<main class="container" id="content">
+
+  <section class="header"><h1>Update profile</h1></section>
+  <form method="post" action="member-edit-profile.php" class="form-membership">
+
+    {% if errors.message %}<div class="alert alert-danger">{{ errors.message }}</div>{% endif %}
+
+    <div class="form-group">
+      <label for="forename">Forename: </label>
+      <input type="text" name="forename" value="{{ member.forename }}" id="forename" class="form-control" />
+      <span class="errors">{{ errors.forename }}</span><br>
+    </div>
+
+    <div class="form-group">
+      <label for="surname">Surname: </label>
+      <input type="text" name="surname" value="{{ member.surname }}"  id="surname" class="form-control" />
+      <span class="errors">{{ errors.surname }}</span><br>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address: </label>
+      <input type="email" name="email" value="{{ member.email }}"  id="email" class="form-control" />
+      <span class="errors">{{ errors.email }}</span><br>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">update</button>
+    </div>
+
+  </form>
+</main>
+{% endblock %}

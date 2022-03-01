@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creative Folk Admin</title>
+    <link rel="stylesheet" href="{{ doc_root }}css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="shortcut icon" type="image/png" href="{{ doc_root }}img/favicon.ico">
+  </head>
+  <body>
+    <header class="header-admin">
+      <a class="skip-link" href="#content">Skip to content</a>
+      <nav class="member-menu">
+        <div class="container">
+          <span class="icon-user"></span><a href="{{ doc_root }}member.php?id={{ session.id }}">{{ session.forename }}</a> /
+            <a href="{{ doc_root }}admin/index.php">Admin</a> /
+          <a href="{{ doc_root }}logout.php">Logout</a>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="logo">
+          <a href="{{ doc_root }}index.php"><img src="{{ doc_root }}img/logo.png" alt="Creative Folk"></a>
+        </div>
+        <nav>
+          <button id="toggle-navigation" aria-expanded="false">
+            <span class="icon-menu"></span><span class="hidden">Menu</span>
+          </button>
+          <ul id="menu">
+            <li><a href="{{ doc_root }}admin/articles.php">Articles</a></li>
+            <li><a href="{{ doc_root }}admin/categories.php">Categories</a></li>
+            <li><a href="{{ doc_root }}admin/members.php">Members</a></li>
+          </ul>
+        </nav>
+      </div><!-- .container -->
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+      <div class="container">
+        &copy; Creative Folk <?= date('Y');?>
+      </div>
+    </footer>
+    <script src="https://cdn.tiny.cloud/1/8hsqe30l6un4uybigsmixlge7buwxb90v2vbavx5yebpnej5/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      if (document.getElementById('article-content')){
+        tinymce.init({
+          menubar: false,
+          selector: '#article-content',
+          toolbar: 'bold italic link',
+          plugins: 'link',
+          target_list: false,
+          link_title: false
+        });
+      };
+    </script>
+    <script src="{{ doc_root }}js/site.js"></script>
+  </body>
+</html>

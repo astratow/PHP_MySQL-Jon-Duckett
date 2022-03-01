@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block title %}Log In{% endblock %}
+{% block description %}Log in to your Creative Folk account{% endblock %}
+{% block content %}
+<main class="container" id="content">
+
+  <section class="header">
+    <h1>Log in</h1>
+  </section>
+  <form method="post" action="{{ doc_root }}login/" class="form-membership">
+    {% if success %}<div class="alert alert-success">{{ success }}</div>{% endif %}
+    {% if errors %}<div class="alert alert-danger">{{ errors.message }}</div>{% endif %}
+
+    <div class="form-group">
+      <label for="email">Email </label>
+      <input type="text" name="email" id="email" value="{{ email }}" class="form-control">
+      <div class="errors">{{ errors.email }}</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password </label>
+      <input type="password" name="password" id="password" class="form-control">
+      <div class="errors">{{ errors.password|raw }}</div>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Log in"><br>
+    <p><a href="{{ doc_root }}password-lost/">Lost password?</a></p>
+  </form>
+
+</main>
+{% endblock %}

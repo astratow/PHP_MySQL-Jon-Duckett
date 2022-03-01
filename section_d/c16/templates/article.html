@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block description %}{{ article.summary|e('html_attr') }}{% endblock %}
+{% block content %}
+<main class="article container" id="content">
+  <section class="image">
+    {% if article.image_file %}
+      <img src="{{ doc_root }}uploads/{{ article.image_file }}" 
+         alt="{{ article.image_alt }}">
+    {% else %}
+      <img src="{{ doc_root }}uploads/blank.png" alt="">
+    {% endif %}
+  </section>
+  <section class="text">
+    <h1>{{ article.title }}</h1>
+    <div class="date">{{ article.created|date('F d, Y') }}</div>
+    <div class="content">{{ article.content|raw }}</div>
+    <p class="credit">
+      Posted in <a href="{{ doc_root }}category.php?id={{ article.category_id }}">{{ article.category }}</a>
+      by <a href="{{ doc_root }}member.php?id={{ article.member_id }}">{{ article.author }}</a>
+    </p>
+  </section>
+</main>
+{% endblock %}

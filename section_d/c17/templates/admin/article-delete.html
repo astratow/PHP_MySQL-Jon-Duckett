@@ -1,0 +1,15 @@
+{% extends 'admin/layout.html' %}
+{% block content %}
+
+  <main class="container admin" id="content">
+    <form action="{{ doc_root }}admin/article-delete/{{article.id}}" method="POST" class="narrow">
+      <h1>Delete Article</h1>
+
+      {% if warning %}<div class="alert alert-danger">{{ warning }}</div>{% endif %}
+
+      <p>Click confirm to delete the article: <em>{{ article.title }}</em></p>
+      <input type="submit" name="delete" value="confirm"  class="btn btn-primary" />
+      <a href="{{ doc_root }}admin/articles" class="btn btn-danger">cancel</a>
+    </form>
+  </main>
+{% endblock %}

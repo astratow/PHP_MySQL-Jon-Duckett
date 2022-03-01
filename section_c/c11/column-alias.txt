@@ -1,0 +1,2 @@
+SELECT forename AS firstname, surname AS lastname 
+  FROM member;

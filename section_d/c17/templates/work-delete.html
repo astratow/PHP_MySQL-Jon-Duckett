@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Delete image{% endblock %}
+{% block content %}
+<main class="container" id="content">
+  <section class="header"><h1>Delete Article</h1></section>
+  <form action="{{ doc_root }}work-delete/{{ article.id }}" method="POST" class="form-membership">
+    <p>Click confirm to delete the article: <i>{{ article.title }}</i></p>
+    <input type="submit" name="delete" value="confirm"  class="btn btn-primary" />
+    <a href="{{ doc_root }}member/{{ session.id }}" class="btn btn-danger">cancel</a>
+  </form>
+</main>
+{% endblock %}

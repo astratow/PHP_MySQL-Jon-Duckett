@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+}
+
+body {
+  background-color: #d4b764;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  text-align: center;
+  background-image: url("../img/pattern.png");
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.page {
+  background-color:#141d1f;
+  border : 3px solid #fff;
+  width: max-content;
+  margin: 50px auto;
+}
+
+header {
+  text-align: center;
+  padding: 0.5em;
+  border-bottom: 3px double #dab655;
+  margin: 0 2em;
+}
+
+section {
+  padding: 2em;
+  width: max-content;
+  margin: 0 auto;
+  line-height: 1.8em;
+  text-align: left;
+}
+
+
+b {
+  color: #dab655;
+}
+
+code {
+  font-family: courier, 'courier new', monospace;
+  text-transform: none;
+  font-weight: normal;
+}

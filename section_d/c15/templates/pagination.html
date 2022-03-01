@@ -1,0 +1,11 @@
+{% if total_pages > 1 %}
+<nav class="pagination" role="navigation" aria-label="Pagination Navigation">
+  <ul>
+  {% for i in 1..total_pages %}
+  <li><a href="?term={{ term }}&show={{ show }}&from={{ (loop.index - 1) * show }}"
+         class="btn {% if loop.index == current_page %} active" aria-current="true{% endif %}">{{ loop.index }}
+    </a></li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}

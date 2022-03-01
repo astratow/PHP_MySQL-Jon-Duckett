@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Search for {{ term }}{% endblock %}
+{% block description %}Search results for {{ term|e('html_attr') }}{% endblock %}
+
+{% block content %}
+<main class="container search" id="content">
+  <section class="header">
+    <form action="search.php" method="get" class="form-search">
+      <label for="search"><span>Search for: </span></label>
+      <input type="text" name="term" value="{{ term }}" 
+             id="search" placeholder="Enter search term"  
+      /><input type="submit" value="Search" class="btn btn-search" />
+    </form>
+    {% if term %}<p><b>Matches found:</b> {{ count }}</p>{% endif %}
+  </section>
+
+  <section class="grid">
+    {{ include('article-summaries.html') }}
+  </section>
+
+  {{ include('pagination.html') }}
+</main>
+{% endblock %}

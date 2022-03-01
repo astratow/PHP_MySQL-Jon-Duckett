@@ -1,0 +1,30 @@
+{% extends 'admin/layout.html' %}
+{% block content %}
+
+  <main class="container" id="content">
+    <section class="header">
+      <h1>Members</h1>
+      {% if success %}<div class="alert alert-success">{{ success }}</div>{% endif %}
+      {% if failure %}<div class="alert alert-danger">{{ failure }}</div>{% endif %}
+    </section>
+    <table class="table table-striped">
+      <tr>
+        <th>Profile picture</th><th>Forename</th><th>Surname</th><th>Role</th><th>Edit role</th>
+      </tr>
+      {% for member in members %}
+      <tr>
+        <td>
+          {% if member.picture %}
+            <img src="{{ doc_root }}uploads/{{ member.picture }}" alt="{{ member.forename }}" class="profile" />
+          {% else %}
+            <img src="{{ doc_root }}uploads/member.png" alt="" class="profile" />
+          {% endif %}
+        </td>
+        <td>{{ member.forename }}</td>
+        <td>{{ member.surname }}</td>
+        <td>{{ member.role }}</td>
+        <td><a href="{{ doc_root }}admin/edit-role/{{ member.id }}" class="btn btn-primary">Edit role</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

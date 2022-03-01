@@ -1,0 +1,3 @@
+SELECT member_id, COUNT(member_id)
+  FROM article
+ GROUP BY member_id;

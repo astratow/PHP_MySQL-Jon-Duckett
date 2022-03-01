@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Creative Folk{% endblock %}</title>
+    <meta name="description" content="{% block description %}Hire ceatives{% endblock %}">
+    <link rel="stylesheet" type="text/css" href="{{ doc_root }}css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="shortcut icon" type="image/png" href="{{ doc_root }}img/favicon.ico">
+  </head>
+  <body>
+    <header>
+      <a class="skip-link" href="#content">Skip to content</a>
+      <nav class="member-menu">
+        <div class="container">
+          {% if session.id == 0 %}
+            <a href="login.php" class="nav-item nav-link">Log in</a> /
+            <a href="register.php" class="nav-item nav-link">Register</a>
+          {% else %}
+            <a href="member.php?id={{ session.id }}">{{ session.forename }}</a> /
+            {% if session.role == 'admin' %}
+              <a href="admin/index.php">Admin</a> /
+            {% endif %}
+            <a href="logout.php">Logout</a>
+          {% endif %}
+        </div>
+      </nav>
+      <div class="container">
+        <div class="logo">
+          <a href="{{ doc_root }}index.php"><img src="{{ doc_root }}img/logo.png" alt="Creative Folk"></a>
+        </div>
+        <nav>
+          <button id="toggle-navigation" aria-expanded="false">
+            <span class="icon-menu"></span><span class="hidden">Menu</span>
+          </button>
+          <ul id="menu">
+            {% for link in navigation %}
+            {% if (link.navigation == 1) %}
+              <li><a href="{{ doc_root }}category.php?id={{ link.id }}"
+              {% if (section == link.id) %} class="on"{% endif %}>
+                {{ link.name }}</a></li>
+            {% endif %}
+            {% endfor %}
+            <li><a href="{{ doc_root }}search.php">
+              <span class="icon-search"></span><span class="search-text">Search</span>
+            </a></li>
+          </ul>
+        </nav>
+      </div><!-- /.container -->
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+      <div class="container">
+        <a href="{{ doc_root }}contact.php">Contact us</a>
+        <span class="copyright">&copy; Creative Folk {{ 'now'|date('Y') }}</span>
+      </div>
+    </footer>
+    <script src="{{ doc_root }}js/site.js"></script>
+  </body>
+</html>

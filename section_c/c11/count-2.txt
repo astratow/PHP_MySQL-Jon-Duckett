@@ -1,0 +1,3 @@
+SELECT COUNT(*) 
+  FROM article
+ WHERE title LIKE '%design%' OR content LIKE '%design%';

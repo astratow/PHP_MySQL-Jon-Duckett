@@ -1,0 +1,13 @@
+{% extends 'admin/layout.html' %}
+{% block content %}
+
+  <main class="container admin" id="content">
+    <form action="{{ doc_root }}admin/category-delete/{{ category.id }}" method="POST" class="narrow">
+      <h1>Delete Category</h1>
+      <p>Click confirm to delete the category: <em>{{ category.name }}</em></p>
+      <input type="submit" name="delete" value="confirm" class="btn btn-primary" />
+      <a href="{{ doc_root }}admin/categories/" class="btn btn-danger">cancel</a>
+    </form>
+  </main>
+
+{% endblock %}

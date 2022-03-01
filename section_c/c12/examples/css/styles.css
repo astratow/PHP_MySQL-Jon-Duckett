@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  background-color: #f7f7f7;
+  color: #575252;
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  padding: 1em;}
+
+a {
+  text-decoration: none;
+  color: #157E77;}
+
+a:hover {
+  color: #157E77;
+  cursor: pointer;}
+
+
+.row {
+	max-width: 966px;
+	margin:auto;
+}
+
+header {
+	display: block;
+	background-color: #8c8885;
+	padding: 1em 0 1em 1em;
+	margin-bottom: 2em;}
+
+h1.logo {
+	display: inline;}
+
+nav {
+	display: inline-block;
+	float: right;
+	padding-top: .5em;
+	text-transform: uppercase;
+	font-size: 120%;
+    padding-bottom: 0.2em;}
+
+nav a {
+  color: #f7f7f7;
+  margin-left: .6em;
+  letter-spacing: 0.15em;}
+
+nav a:hover, nav a.selected {
+ color: #7CE9E2;
+}
+
+.search {
+	clear: both;
+	float: right;
+	display: none;}
+
+#search-box {
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #8c8885;
+	color: #8c8885;
+}
+
+#search-term {
+	border-top: none;
+	border-left: none;
+	border-bottom: 1px solid #333;
+	border-right: none;
+	font-size: 100%
+}
+
+#search-button {
+	border: none;
+	border-radius: 3px;
+	background-color:#22ccc1;
+	color: #fff;
+	font-size: 100%
+}
+
+h2 {
+	margin: 0;
+	font-weight: normal;}
+
+/* Section header */
+.header {
+	min-height: 3em;
+	text-align: center;
+	margin: 1em 0 2em 0;}
+
+.header h1 {
+	margin: 0;
+	font-weight: normal;
+}
+
+.header img {
+	border-radius: 50%;
+}
+
+footer {
+  clear: both;
+  margin-top: 3em;
+  border-top: 1px solid #d6d6d6;
+  padding: 1em 0;
+  background-color: #8c8885;
+  color: #f7f7f7;
+  text-align: right;}
+
+
+.article {
+	max-width: 966px;
+	margin:auto;
+
+}
+
+.article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Article Grid */
+.article-summary-grid {
+  display: grid;
+  max-width: 966px;
+  margin:auto;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 33px; }
+
+.article-summary img {
+	width: 100%;
+	margin-bottom: .4em;}
+
+.article-summary img:hover {
+    opacity: 0.5;}
+
+.article-summary-category {
+	background-color: #8c8885;
+	color: #fff;
+	text-transform: uppercase;
+	padding: .4em;
+	font-size: 0.8em;
+	display: inline-block;
+	float: right;
+	position: relative;
+	top: 166px;}
+
+.article-summary h2 {
+	margin: 0 0 .2em 0;
+	font-weight: normal;}
+
+
+/* Article Page */
+.article-image {
+	width: 60%;
+	float:left;}
+
+.article-image img {
+	max-width: 100%;} 
+
+.article-description {
+	width: 30%;
+	float: right;
+	margin-top: 2em;
+	line-height: 1.6em;}
+
+.article-date {
+	margin: 1em 0;
+	color: #157E77;}
+
+.article-author {
+	display: block;
+	float: right;
+	font-style: italic;}
+
+.article-author a {
+	color: #157E77;}
+
+.article-author a:hover {
+	color: #155f7e;}
+
+
+.article-category {
+	background-color: #8c8885;
+	color: #fff;
+	text-transform: uppercase;
+	padding: .4em;
+	font-size: 0.8em;
+	display: inline-block;
+	position: relative;
+	float: right;
+	top: 320px;
+}
+
+i.author, i.author a {
+	color: #766F6F;
+	display: block;
+	line-height: 2em;
+}
+
+
+i.author a:hover {
+  color: #157E77;}
+
+/* Member list */
+.member-summary-grid {
+  display: grid;
+  max-width: 966px;
+  min-height: 200px;
+  margin:auto;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 33px; }
+
+
+.member-summary img {
+	float: left;
+	margin-right: 1em;
+	border-radius: 50%;}
+
+.member-summary img:hover {
+    opacity: 0.5;}
+
+.member-summary h2 {
+	margin: .2em 0 .2em 0;
+	font-weight: normal;}
+
+/* Member Page */
+
+.member-name {
+	display: block;
+	text-transform: uppercase;
+	padding-bottom: .4em;
+	border-bottom: 1px solid #8c8985;}
+
+/* Pagination */
+ul.pagination {
+    text-align: center;
+    margin: auto;}
+
+ul.pagination li {
+    display: inline-block;
+    list-style-type: none;}
+
+ul.pagination a {
+    color: #333;
+    background: #efefef;
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin: 2px 2px 2px 0;
+    padding: 2px 9px 4px 9px;
+    display:inline-block;
+    text-align: center;
+}
+
+ul.pagination a.active, ul.pagination a:hover {
+	border: 1px solid #d6d6d6;}
+
+/* Icons */
+@font-face {
+  font-family: 'icons';
+  src: url('../../../font/icons/icons.eot?32379401');
+  src: url('../../../font/icons/icons.eot?32379401#iefix') format('embedded-opentype'),
+       url('../../../font/icons/icons.woff2?32379401') format('woff2'),
+       url('../../../font/icons/icons.woff?32379401') format('woff'),
+       url('../../../font/icons/icons.ttf?32379401') format('truetype'),
+       url('../../../font/icons/icons.svg?32379401#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+ 
+.icon-search:before { content: '\e800'; } /* '' */
+.icon-comment:before { content: '\e801'; } /* '' */
+.icon-heart-empty:before { content: '\e802'; } /* '' */
+.icon-heart:before { content: '\e803'; } /* '' */
+.icon-comment-empty:before { content: '\f0e5'; } /* '' */

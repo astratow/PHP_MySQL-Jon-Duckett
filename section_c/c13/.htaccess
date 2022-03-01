@@ -1,0 +1,14 @@
+php_value  default_charset     "utf-8"
+php_value  max_execution_time  30
+php_value  memory_limit        128M
+php_flag   file_uploads        on
+php_value  post_max_size       32M
+php_value  upload_max_filesize 1M
+php_value  error_reporting     -1
+php_flag   display_errors      on
+php_flag   log_errors          on
+php_value  error_log           "/Applications/MAMP/logs/php_error.log"
+php_value  date.timezone       "Europe/Berlin"
+
+ErrorDocument 404 /phpbook/section_c/c13/cms/page-not-found.php
+ErrorDocument 500 /phpbook/section_c/c13/cms/error.php

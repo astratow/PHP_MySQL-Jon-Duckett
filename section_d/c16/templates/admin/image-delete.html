@@ -1,0 +1,12 @@
+{% extends 'admin/layout.html' %}
+{% block content %}
+  <main class="container admin" id="content">
+    <form action="image-delete.php?id={{ article.id }}" method="POST" class="narrow">
+      <h1>Delete Image</h1>
+      <p>Click confirm to delete the image:</p>
+      <p><img src="../uploads/{{ article.image_file }}" alt="{{ article.image_alt }}"></p>
+      <input type="submit" name="delete" value="confirm" class="btn btn-primary" />
+      <a href="article.php?id={{ article.id }}" class="btn btn-danger">cancel</a>
+    </form>
+  </main>
+{% endblock %}

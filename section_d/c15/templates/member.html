@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ member.forename }} {{ member.surname }}{% endblock %}
+{% block description %}{{ member.forename|e('html_attr') }} {{ member.surname|e('html_attr') }} on Creative Folk{% endblock %}
+
+{% block content %}
+<main class="container" id="content">
+  <section class="header">
+    <h1>{{ member.forename }} {{ member.surname }}</h1>
+    <p class="member"><b>Member since:</b> {{ member.joined|date('F d, Y') }}</p>
+    {% if member.picture %}
+      <img src="{{ doc_root }}uploads/{{ member.picture }}"  alt="{{ member.forename }}"><br>
+    {% else %}
+      <img src="{{ doc_root }}uploads/member.png"  alt=""><br>
+    {% endif %}
+  </section>
+  <section class="grid">
+    {{ include('article-summaries.html') }}
+  </section>
+</main>
+{% endblock %}

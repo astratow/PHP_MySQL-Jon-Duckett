@@ -1,0 +1,2 @@
+SELECT CONCAT(forename, ' ', surname) AS author 
+  FROM member;

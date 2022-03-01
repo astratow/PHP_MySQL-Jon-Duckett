@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+{% block title %}Edit article{% endblock %}
+{% block content %}
+    <form action="{{ app_root }}work.php?id={{ article.id }}" method="POST"  enctype="multipart/form-data">
+
+    <main class="container" id="content">
+      <section class="header"><h1>Create &amp; Edit Your Work:</h1></section>
+      {% if errors.message %}<div class="alert alert-danger">{{ errors.message }}</div>{% endif %}
+
+      <div class="admin-article">
+        <section class="image">
+          {% if not article.image_file %}
+            <label for="image">Upload image</label>
+            <div class="form-group image-placeholder">
+              <input type="file" name="image" class="form-control-file" id="image"><br>
+              <span class="errors">{{ errors.image_file }}</span>
+            </div>
+            <div class="form-group">
+              <label for="image_alt">Alt text: </label>
+              <input type="text" name="image_alt" id="image_alt" value=""  class="form-control">
+              <span class="errors">{{ errors.image_alt }}</span>
+            </div>
+          {% else %}
+            <label>Image:</label>
+            <img src="uploads/{{article.image_file}}">
+            <p class="alt"><strong>Alt text:</strong> {{ article.image_alt }}</p>
+          {% endif %}
+        </section>
+
+
+        <section class="text">
+          <div class="form-group">
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title" value="{{ article.title }}" class="form-control">
+            <span class="errors">{{ errors.title }}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="summary">Summary: </label>
+            <textarea name="summary" id="summary" class="form-control">{{ article.summary }}</textarea>
+            <span class="errors">{{ errors.summary }}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="article-content">Content: </label>
+            <textarea name="content" id="article-content" class="form-control">{{ article.content }}</textarea>
+            <span class="errors">{{ errors.content }}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category: </label>
+            <select name="category_id" id="category">
+              {% for category in categories %}
+                <option value="{{ category.id }}"
+                  {% if article.category_id == category.id %} selected{% endif %}>
+                  {{ category.name }}</option>
+              {% endfor %}
+              </select>
+            <span class="errors">{{ errors.category }}</span>
+          </div>
+
+          <input type="hidden" name="member_id" value="{{ session.id }}" />
+          <span class="errors">{{ errors.member }}</span>
+
+          <input type="submit" name="update" value="save" class="btn btn-primary">
+          {% if article.id %}
+            <a href="{{ app_root }}work-delete.php?id={{ article.id }}"  class="btn btn-danger">delete</a>
+          {% endif %}
+
+        </section>
+
+      </div><!-- /.admin-article -->
+
+    </main>
+
+  </form>
+  <script src="https://cdn.tiny.cloud/1/8hsqe30l6un4uybigsmixlge7buwxb90v2vbavx5yebpnej5/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    if (document.getElementById('article-content')){
+      tinymce.init({
+        menubar: false,
+        selector: '#article-content',
+        toolbar: 'bold italic link',
+        plugins: 'link',
+        target_list: false,
+        link_title: false
+      });
+    };
+  </script>
+
+{% endblock %}

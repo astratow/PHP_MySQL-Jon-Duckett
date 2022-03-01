@@ -1,0 +1,4 @@
+SELECT title
+  FROM article
+ ORDER BY id
+ LIMIT 1;

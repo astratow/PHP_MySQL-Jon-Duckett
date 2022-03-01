@@ -1,0 +1,7 @@
+php_value  error_reporting     -1
+php_flag   display_errors      off
+php_flag   log_errors          on
+php_value  output_buffering    off
+
+ErrorDocument 404 /phpbook/section_b/c10/live/page-not-found.php
+ErrorDocument 500 /phpbook/section_b/c10/live/error.php

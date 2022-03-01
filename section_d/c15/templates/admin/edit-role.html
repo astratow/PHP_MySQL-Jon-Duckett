@@ -1,0 +1,13 @@
+{% extends 'admin/admin-layout.html' %}
+{% block content %}
+<h1>Edit member role</h1>
+<p>Member name: {{ member.forename }} {{ member.surname }}</p>
+<form action="edit-role.php?id={{ member.id }}" method="POST" >
+  <select name="role" class="form-control">
+    <option value="member" {% if member.role == 'member' %}selected{% endif %}>Member</option>
+    <option value="admin" {% if member.role == 'admin' %}selected{% endif %}>Admin</option>
+    <option value="suspended" {% if member.role == 'suspended' %}selected{% endif %}>Suspended</option>
+  </select><br>
+  <input type="submit" value="Update role" class="btn btn-primary" />
+</form>
+{% endblock %}

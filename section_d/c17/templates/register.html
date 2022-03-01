@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block title %}Register{% endblock %}
+{% block description %}Register for Creative Folk{% endblock %}
+
+{% block content %}
+<main class="container" id="content">
+
+  <section class="header">
+    <h1>Register</h1>
+  </section>
+  <form method="post" action="{{ doc_root }}register" class="form-membership">
+    {% if errors %}<div class="alert alert-danger">Please correct errors</div>{% endif %}
+
+    <div class="form-group">
+      <label for="forename">Forename: </label><input type="text" name="forename" value="{{ member.forename }}" id="forename" class="form-control">
+      <div class="errors">{{ errors.forename }}</div>
+    </div>
+
+    <div class="form-group">
+      <label for="surname">Surname: </label><input type="text" name="surname" value="{{ member.surname }}" id="surname" class="form-control">
+      <div class="errors">{{ errors.surname }}</div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address: </label><input type="email" name="email" value="{{ member.email }}" id="email" class="form-control">
+      <div class="errors">{{ errors.email }}</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password: </label><input type="password" name="password" id="password" class="form-control">
+      <div class="errors">{{ errors.password|raw }}</div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirm">Confirm Password: </label><input type="password" name="confirm" id="confirm" class="form-control">
+      <div class="errors">{{ errors.confirm }}</div>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Register">
+  </form>
+
+</main>
+{% endblock %}
