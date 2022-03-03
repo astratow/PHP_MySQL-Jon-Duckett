@@ -4,7 +4,7 @@ $rates = [
     'uk' => 0.81,
     'eu' => 0.93,
     'jp' => 113.21,
-    'au' => 123,
+    'au' => 132,
 ];
 
 function calculate_prices($usd, $exchange_rates)
